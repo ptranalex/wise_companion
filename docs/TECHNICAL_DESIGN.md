@@ -65,7 +65,7 @@ flowchart TD
 
 ### 4.2 “Morning first open” / showing today’s quote
 
-**Decision**: If today’s quote is cached for the current local calendar date, render it immediately. Otherwise, generate, then cache.
+**Decision**: If today’s quote is cached for the current local calendar date **and current mode**, render it immediately. Otherwise, generate, then cache.
 
 Sequence (simplified):
 
@@ -73,7 +73,7 @@ Sequence (simplified):
 User clicks menu bar icon
   -> QuoteView appears
     -> QuoteService.loadToday()
-       -> if cache has entry for local YYYY-MM-DD: return it
+       -> if cache has entry for local YYYY-MM-DD AND cache.mode == preferences.mode: return it
        -> else: OpenAIClient.generate(prompt, mode)
            -> validate/parse response
            -> persist cache with local YYYY-MM-DD
@@ -126,7 +126,7 @@ Define:
 
 Behavior:
 
-- If `cache.dateKey == today.dateKey`: show cached
+- If `cache.dateKey == today.dateKey` **and** `cache.mode == preferences.mode`: show cached
 - Else: generate new and overwrite cache
 
 Edge cases (accepted in MVP):
@@ -239,6 +239,7 @@ Simple approach (MVP):
 
 - DailyPolicy: dateKey generation and “same day” logic
 - QuoteCacheStore: read/write/overwrite behavior
+- Cache validation: same day but mode change invalidates cache (regenerate / overwrite)
 - OpenAIClient: request construction and response parsing (with fixtures/mocks)
 
 ### Integration tests (lightweight)

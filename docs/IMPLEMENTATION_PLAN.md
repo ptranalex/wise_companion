@@ -4,6 +4,12 @@
 
 This document breaks the MVP into **small, reviewable PR slices** with clear acceptance criteria. It is designed to work well with Cursor AI: each task is scoped, testable, and maps directly to code changes.
 
+## How to maintain this doc
+
+- Update this doc when **scope, sequencing, acceptance criteria, or architecture** changes.
+- Treat it as the stable reference for “what we’re building” and “what done means.”
+- The day-to-day execution checklist lives in `docs/TODO.md`.
+
 ## MVP Decisions (Locked)
 
 - **App type**: Menu bar app
@@ -82,9 +88,11 @@ This document breaks the MVP into **small, reviewable PR slices** with clear acc
 - **Acceptance criteria**:
   - If cached dateKey == today, app shows cached content immediately.
   - If cached dateKey != today, cache is treated as stale.
+  - If cached dateKey == today but **mode changed** (Economy/Premium), cache is treated as stale and regenerated.
 - **Test plan**:
   - Manually simulate cache file contents; confirm UI behavior matches.
   - Unit tests for read/write/overwrite.
+  - Unit test: same day but mode change invalidates cache (regenerate / overwrite).
 
 ## Milestone 3 — Keychain & Login Item
 
