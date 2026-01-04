@@ -14,8 +14,29 @@ struct QuoteView: View {
         GenerationMode(rawValue: modeRawValue) ?? .economy
     }
 
+    @State private var hasAPIKey: Bool? = nil
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
+            if hasAPIKey == false {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("OpenAI API key required")
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+
+                    Text("Add your API key in Settings to enable daily quote generation.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+
+                    Button("Open Settings", action: onOpenSettings)
+                        .buttonStyle(.bordered)
+                        .controlSize(.small)
+                }
+                .padding(10)
+                .background(Color.secondary.opacity(0.10))
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+            }
+
             Text("“\(quote)”")
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -52,6 +73,18 @@ struct QuoteView: View {
         }
         .padding(16)
         .frame(minWidth: 360, minHeight: 260, alignment: .topLeading)
+        .onAppear(perform: refreshHasAPIKey)
+    }
+
+    private func refreshHasAPIKey() {
+        do {
+            let store = KeychainStore()
+            let key = try store.loadString(account: SecretsKeys.openAIAPIKeyAccount)
+            hasAPIKey = (key?.isEmpty == false)
+        } catch {
+            // If Keychain is unavailable, treat as missing to guide user to Settings.
+            hasAPIKey = false
+        }
     }
 }
 

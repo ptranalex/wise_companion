@@ -7,6 +7,10 @@ struct SettingsView: View {
 
     let onBack: () -> Void
 
+    @State private var apiKeyDraft: String = ""
+    @State private var apiKeyStatusText: String? = nil
+    @State private var isAPIKeyVisible: Bool = false
+
     private var mode: GenerationMode {
         GenerationMode(rawValue: modeRawValue) ?? .economy
     }
@@ -70,10 +74,91 @@ struct SettingsView: View {
                 .font(.caption)
                 .foregroundStyle(.secondary)
 
+            Divider()
+
+            VStack(alignment: .leading, spacing: 8) {
+                Text("OpenAI API Key")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+
+                HStack(spacing: 8) {
+                    Group {
+                        if isAPIKeyVisible {
+                            TextField("sk-…", text: $apiKeyDraft)
+                                .textFieldStyle(.roundedBorder)
+                        } else {
+                            SecureField("sk-…", text: $apiKeyDraft)
+                                .textFieldStyle(.roundedBorder)
+                        }
+                    }
+
+                    Button(action: { isAPIKeyVisible.toggle() }) {
+                        Image(systemName: isAPIKeyVisible ? "eye.slash" : "eye")
+                    }
+                    .buttonStyle(.plain)
+                    .help(isAPIKeyVisible ? "Hide" : "Show")
+                }
+
+                HStack(spacing: 10) {
+                    Button("Save") { saveAPIKey() }
+                        .disabled(apiKeyDraft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+
+                    Button("Remove key", role: .destructive) { removeAPIKey() }
+
+                    Spacer()
+                }
+
+                if let apiKeyStatusText {
+                    Text(apiKeyStatusText)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                } else {
+                    Text("Stored securely in macOS Keychain. Wise Companion never transmits it anywhere except to OpenAI.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
             Spacer(minLength: 0)
         }
         .padding(16)
         .frame(minWidth: 360, minHeight: 300, alignment: .topLeading)
+        .onAppear(perform: loadExistingAPIKey)
+    }
+
+    private func loadExistingAPIKey() {
+        do {
+            let store = KeychainStore()
+            if let existing = try store.loadString(account: SecretsKeys.openAIAPIKeyAccount), !existing.isEmpty {
+                apiKeyDraft = existing
+                apiKeyStatusText = "API key loaded from Keychain."
+            } else {
+                apiKeyStatusText = "No API key saved yet."
+            }
+        } catch {
+            apiKeyStatusText = "Could not read API key from Keychain."
+        }
+    }
+
+    private func saveAPIKey() {
+        do {
+            let store = KeychainStore()
+            try store.saveString(apiKeyDraft.trimmingCharacters(in: .whitespacesAndNewlines), account: SecretsKeys.openAIAPIKeyAccount)
+            apiKeyStatusText = "API key saved to Keychain."
+        } catch {
+            apiKeyStatusText = "Could not save API key to Keychain."
+        }
+    }
+
+    private func removeAPIKey() {
+        do {
+            let store = KeychainStore()
+            try store.delete(account: SecretsKeys.openAIAPIKeyAccount)
+            apiKeyDraft = ""
+            apiKeyStatusText = "API key removed from Keychain."
+        } catch {
+            apiKeyStatusText = "Could not remove API key from Keychain."
+        }
     }
 }
 

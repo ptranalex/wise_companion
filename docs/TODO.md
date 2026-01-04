@@ -43,10 +43,10 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR4 — Keychain API key management + UX
 
-- [ ] Implement Keychain wrapper (save/read/delete)
-- [ ] Settings UI: API key entry/update + “Remove key”
-- [ ] Main UI: missing-key state shows clear copy + “Open Settings”
-- [ ] Manual test: key persists across restart; remove key works
+- [x] Implement Keychain wrapper (save/read/delete)
+- [x] Settings UI: API key entry/update + “Remove key”
+- [x] Main UI: missing-key state shows clear copy + “Open Settings”
+- [x] Manual test: key persists across restart; remove key works
 
 ## PR5 — Auto-launch (login item) + settings toggle
 

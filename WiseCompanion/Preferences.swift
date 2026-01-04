@@ -20,4 +20,8 @@ enum PreferencesKeys {
     static let autoLaunchEnabled = "autoLaunchEnabled"
 }
 
+enum SecretsKeys {
+    static let openAIAPIKeyAccount = "openai_api_key"
+}
+
 
