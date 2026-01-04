@@ -1,9 +1,18 @@
 import SwiftUI
 
 struct QuoteView: View {
+    @AppStorage(PreferencesKeys.userPrompt) private var userPrompt: String = ""
+    @AppStorage(PreferencesKeys.mode) private var modeRawValue: String = GenerationMode.economy.rawValue
+
+    let onOpenSettings: () -> Void
+
     private let quote = "Start the day by choosing one thing to do with care."
     private let context =
         "Your attention is your most valuable resource. When you decide where it goes before the day decides for you, you keep your agency. Let today be guided by a single intentional commitment."
+
+    private var mode: GenerationMode {
+        GenerationMode(rawValue: modeRawValue) ?? .economy
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -24,14 +33,21 @@ struct QuoteView: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
 
+                Text("•")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
+                Text(mode.displayName)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+
                 Spacer()
 
-                Button(action: {}) {
+                Button(action: onOpenSettings) {
                     Image(systemName: "gearshape")
                 }
                 .buttonStyle(.plain)
-                .help("Settings (coming soon)")
-                .disabled(true)
+                .help("Settings")
             }
         }
         .padding(16)

@@ -18,11 +18,11 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR2 — Settings UI + Preferences persistence
 
-- [ ] Add Settings surface reachable from main UI
-- [ ] Persist user prompt text locally
-- [ ] Persist Economy/Premium mode toggle locally
-- [ ] Persist auto-launch toggle locally (plumbing only; actual login item in PR5)
-- [ ] Manual test: preferences persist across app restart
+- [x] Add Settings surface reachable from main UI
+- [x] Persist user prompt text locally
+- [x] Persist Economy/Premium mode toggle locally
+- [x] Persist auto-launch toggle locally (plumbing only; actual login item in PR5)
+- [x] Manual test: preferences persist across app restart
 
 ## PR3 — Daily policy + quote cache store + tests
 
