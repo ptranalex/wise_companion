@@ -67,13 +67,13 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR7 — QuoteService (cache-or-generate) + cancellation + UI wiring
 
-- [ ] Implement `QuoteService.loadToday()` orchestration:
-  - [ ] Check cache (dateKey + mode)
-  - [ ] Generate if needed
-  - [ ] Persist cache
-- [ ] Wire `QuoteView` to service and render real data
-- [ ] Cancellation: close surface cancels in-flight request (no repeated retries)
-- [ ] Manual test: same day shows cached; mode flip regenerates; offline shows error + retry
+- [x] Implement `QuoteService.loadToday()` orchestration:
+  - [x] Check cache (dateKey + mode)
+  - [x] Generate if needed
+  - [x] Persist cache
+- [x] Wire `QuoteView` to service and render real data
+- [x] Cancellation: close surface cancels in-flight request (no repeated retries)
+- [x] Manual test: same day shows cached; mode flip regenerates; offline shows error + retry
 
 ## PR8 — UX polish + hardening + QA checklist
 
