@@ -50,10 +50,10 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR5 — Auto-launch (login item) + settings toggle
 
-- [ ] Implement login item via `SMAppService` (preferred)
-- [ ] Default ON for new installs (if allowed by OS); degrade gracefully otherwise
-- [ ] Settings toggle enables/disables and stays consistent across restarts
-- [ ] Manual test: toggle on/off + relogin behavior
+- [x] Implement login item via `SMAppService` (preferred)
+- [x] Default ON for new installs (if allowed by OS); degrade gracefully otherwise
+- [x] Settings toggle enables/disables and stays consistent across restarts
+- [x] Manual test: toggle on/off + relogin behavior
 
 ## PR6 — OpenAI client + prompt template + parsing + tests
 

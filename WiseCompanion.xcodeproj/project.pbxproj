@@ -18,6 +18,7 @@
 		AA1111111111111111111121 /* QuoteCacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000012 /* QuoteCacheStore.swift */; };
 		AA1111111111111111111122 /* QuoteCacheValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000013 /* QuoteCacheValidation.swift */; };
 		AA1111111111111111111123 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000014 /* KeychainStore.swift */; };
+		AA1111111111111111111124 /* AutoLaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000015 /* AutoLaunchManager.swift */; };
 		AA1111111111111111111201 /* DailyPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000101 /* DailyPolicyTests.swift */; };
 		AA1111111111111111111202 /* QuoteCacheStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000102 /* QuoteCacheStoreTests.swift */; };
 		AA1111111111111111111203 /* QuoteCacheValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000103 /* QuoteCacheValidationTests.swift */; };
@@ -50,6 +51,7 @@
 		AA0000000000000000000012 /* QuoteCacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheStore.swift; sourceTree = "<group>"; };
 		AA0000000000000000000013 /* QuoteCacheValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheValidation.swift; sourceTree = "<group>"; };
 		AA0000000000000000000014 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
+		AA0000000000000000000015 /* AutoLaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLaunchManager.swift; sourceTree = "<group>"; };
 		AA0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000101 /* DailyPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicyTests.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				AA0000000000000000000012 /* QuoteCacheStore.swift */,
 				AA0000000000000000000013 /* QuoteCacheValidation.swift */,
 				AA0000000000000000000014 /* KeychainStore.swift */,
+				AA0000000000000000000015 /* AutoLaunchManager.swift */,
 				AA0000000000000000000006 /* Info.plist */,
 			);
 			path = WiseCompanion;
@@ -231,6 +234,7 @@
 				AA1111111111111111111121 /* QuoteCacheStore.swift in Sources */,
 				AA1111111111111111111122 /* QuoteCacheValidation.swift in Sources */,
 				AA1111111111111111111123 /* KeychainStore.swift in Sources */,
+				AA1111111111111111111124 /* AutoLaunchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

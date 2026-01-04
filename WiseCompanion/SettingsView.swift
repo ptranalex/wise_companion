@@ -10,6 +10,7 @@ struct SettingsView: View {
     @State private var apiKeyDraft: String = ""
     @State private var apiKeyStatusText: String? = nil
     @State private var isAPIKeyVisible: Bool = false
+    @State private var autoLaunchStatusText: String? = nil
 
     private var mode: GenerationMode {
         GenerationMode(rawValue: modeRawValue) ?? .economy
@@ -69,10 +70,19 @@ struct SettingsView: View {
             }
 
             Toggle("Launch on login", isOn: $autoLaunchEnabled)
+                .onChange(of: autoLaunchEnabled) { newValue in
+                    autoLaunchStatusText = AutoLaunchManager.syncFromPreferences(autoLaunchEnabled: newValue)
+                }
 
-            Text("Note: this toggle is saved now; it will take effect when login-item wiring ships in PR5.")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            if let autoLaunchStatusText {
+                Text(autoLaunchStatusText)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else {
+                Text("Managed via macOS Login Items. If this fails, you can control it in System Settings → Login Items.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
 
             Divider()
 
