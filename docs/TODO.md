@@ -57,13 +57,13 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR6 — OpenAI client + prompt template + parsing + tests
 
-- [ ] Define prompt template enforcing: calm tone, original-only, avoid clichés, short output
-- [ ] Define structured output contract (JSON with `quote`, `context`)
-- [ ] Implement OpenAI client (async/await, timeouts, error mapping)
-- [ ] Implement Economy/Premium config:
-  - [ ] Balanced default model selection per mode
-  - [ ] Strict max output tokens per mode
-- [ ] Unit tests with mocks/fixtures for parsing + error mapping
+- [x] Define prompt template enforcing: calm tone, original-only, avoid clichés, short output
+- [x] Define structured output contract (JSON with `quote`, `context`)
+- [x] Implement OpenAI client (async/await, timeouts, error mapping)
+- [x] Implement Economy/Premium config:
+  - [x] Balanced default model selection per mode
+  - [x] Strict max output tokens per mode
+- [x] Unit tests with mocks/fixtures for parsing + error mapping
 
 ## PR7 — QuoteService (cache-or-generate) + cancellation + UI wiring
 

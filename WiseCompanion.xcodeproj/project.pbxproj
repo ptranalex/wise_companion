@@ -19,9 +19,13 @@
 		AA1111111111111111111122 /* QuoteCacheValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000013 /* QuoteCacheValidation.swift */; };
 		AA1111111111111111111123 /* KeychainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000014 /* KeychainStore.swift */; };
 		AA1111111111111111111124 /* AutoLaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000015 /* AutoLaunchManager.swift */; };
+		AA1111111111111111111125 /* OpenAIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000016 /* OpenAIClient.swift */; };
+		AA1111111111111111111126 /* OpenAIQuotePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000017 /* OpenAIQuotePrompt.swift */; };
+		AA1111111111111111111127 /* QuoteJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* QuoteJSONParser.swift */; };
 		AA1111111111111111111201 /* DailyPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000101 /* DailyPolicyTests.swift */; };
 		AA1111111111111111111202 /* QuoteCacheStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000102 /* QuoteCacheStoreTests.swift */; };
 		AA1111111111111111111203 /* QuoteCacheValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000103 /* QuoteCacheValidationTests.swift */; };
+		AA1111111111111111111205 /* OpenAIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000104 /* OpenAIClientTests.swift */; };
 		AA1111111111111111111204 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000A /* XCTest.framework */; };
 		AA1111111111111111111114 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* Cocoa.framework */; };
 		AA1111111111111111111115 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* SwiftUI.framework */; };
@@ -52,11 +56,15 @@
 		AA0000000000000000000013 /* QuoteCacheValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheValidation.swift; sourceTree = "<group>"; };
 		AA0000000000000000000014 /* KeychainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainStore.swift; sourceTree = "<group>"; };
 		AA0000000000000000000015 /* AutoLaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLaunchManager.swift; sourceTree = "<group>"; };
+		AA0000000000000000000016 /* OpenAIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClient.swift; sourceTree = "<group>"; };
+		AA0000000000000000000017 /* OpenAIQuotePrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIQuotePrompt.swift; sourceTree = "<group>"; };
+		AA0000000000000000000018 /* QuoteJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteJSONParser.swift; sourceTree = "<group>"; };
 		AA0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000101 /* DailyPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicyTests.swift; sourceTree = "<group>"; };
 		AA0000000000000000000102 /* QuoteCacheStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheStoreTests.swift; sourceTree = "<group>"; };
 		AA0000000000000000000103 /* QuoteCacheValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheValidationTests.swift; sourceTree = "<group>"; };
+		AA0000000000000000000104 /* OpenAIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIClientTests.swift; sourceTree = "<group>"; };
 		AA0000000000000000000004 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA0000000000000000000005 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		AA000000000000000000000A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = System/Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
@@ -109,6 +117,9 @@
 				AA0000000000000000000013 /* QuoteCacheValidation.swift */,
 				AA0000000000000000000014 /* KeychainStore.swift */,
 				AA0000000000000000000015 /* AutoLaunchManager.swift */,
+				AA0000000000000000000016 /* OpenAIClient.swift */,
+				AA0000000000000000000017 /* OpenAIQuotePrompt.swift */,
+				AA0000000000000000000018 /* QuoteJSONParser.swift */,
 				AA0000000000000000000006 /* Info.plist */,
 			);
 			path = WiseCompanion;
@@ -121,6 +132,7 @@
 				AA0000000000000000000101 /* DailyPolicyTests.swift */,
 				AA0000000000000000000102 /* QuoteCacheStoreTests.swift */,
 				AA0000000000000000000103 /* QuoteCacheValidationTests.swift */,
+				AA0000000000000000000104 /* OpenAIClientTests.swift */,
 				AA0000000000000000000100 /* Info.plist */,
 			);
 			path = WiseCompanionTests;
@@ -235,6 +247,9 @@
 				AA1111111111111111111122 /* QuoteCacheValidation.swift in Sources */,
 				AA1111111111111111111123 /* KeychainStore.swift in Sources */,
 				AA1111111111111111111124 /* AutoLaunchManager.swift in Sources */,
+				AA1111111111111111111125 /* OpenAIClient.swift in Sources */,
+				AA1111111111111111111126 /* OpenAIQuotePrompt.swift in Sources */,
+				AA1111111111111111111127 /* QuoteJSONParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +261,7 @@
 				AA1111111111111111111201 /* DailyPolicyTests.swift in Sources */,
 				AA1111111111111111111202 /* QuoteCacheStoreTests.swift in Sources */,
 				AA1111111111111111111203 /* QuoteCacheValidationTests.swift in Sources */,
+				AA1111111111111111111205 /* OpenAIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
