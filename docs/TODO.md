@@ -7,6 +7,10 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 - Update this checklist whenever “what we’re doing next” changes (split/merge PRs, add/remove subtasks, mark complete).
 - If you discover a new requirement or change scope, update `docs/IMPLEMENTATION_PLAN.md` first, then reflect it here.
 
+## Project hygiene (ongoing)
+
+- [x] Add GitHub Actions CI to build the macOS app on PRs and pushes to `main`
+
 ## PR1 — Menu bar shell + main placeholder UI
 
 - [x] Create macOS SwiftUI app shell (menu bar-capable)

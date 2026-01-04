@@ -34,6 +34,7 @@ This document breaks the MVP into **small, reviewable PR slices** with clear acc
 - **Acceptance criteria**:
   - `docs/PRD.md`, `docs/TECHNICAL_DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md` exist.
   - README (optional) tells how to run/build.
+  - GitHub Actions CI builds the app on PRs and pushes to `main` (no code signing).
 
 ## Milestone 1 — Menu Bar Shell & UI Surface
 
