@@ -10,6 +10,9 @@
 		AA1111111111111111111111 /* WiseCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* WiseCompanionApp.swift */; };
 		AA1111111111111111111112 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* MenuBarController.swift */; };
 		AA1111111111111111111113 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* QuoteView.swift */; };
+		AA1111111111111111111116 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000007 /* Preferences.swift */; };
+		AA1111111111111111111117 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000008 /* SettingsView.swift */; };
+		AA1111111111111111111118 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000009 /* RootView.swift */; };
 		AA1111111111111111111114 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* Cocoa.framework */; };
 		AA1111111111111111111115 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* SwiftUI.framework */; };
 /* End PBXBuildFile section */
@@ -19,6 +22,9 @@
 		AA0000000000000000000001 /* WiseCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiseCompanionApp.swift; sourceTree = "<group>"; };
 		AA0000000000000000000002 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		AA0000000000000000000003 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000007 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		AA0000000000000000000008 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000009 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000004 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA0000000000000000000005 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -52,7 +58,10 @@
 			children = (
 				AA0000000000000000000001 /* WiseCompanionApp.swift */,
 				AA0000000000000000000002 /* MenuBarController.swift */,
+				AA0000000000000000000009 /* RootView.swift */,
 				AA0000000000000000000003 /* QuoteView.swift */,
+				AA0000000000000000000008 /* SettingsView.swift */,
+				AA0000000000000000000007 /* Preferences.swift */,
 				AA0000000000000000000006 /* Info.plist */,
 			);
 			path = WiseCompanion;
@@ -136,7 +145,10 @@
 			files = (
 				AA1111111111111111111111 /* WiseCompanionApp.swift in Sources */,
 				AA1111111111111111111112 /* MenuBarController.swift in Sources */,
+				AA1111111111111111111118 /* RootView.swift in Sources */,
 				AA1111111111111111111113 /* QuoteView.swift in Sources */,
+				AA1111111111111111111117 /* SettingsView.swift in Sources */,
+				AA1111111111111111111116 /* Preferences.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
