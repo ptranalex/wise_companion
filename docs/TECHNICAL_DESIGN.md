@@ -30,13 +30,18 @@
 Wise Companion is a small Swift/SwiftUI app composed of:
 
 - **Menu bar entry** (status item) to open the main content surface
-- **Main content surface** (popover or small window) rendering today’s quote
+- **Main content surface**: **popover** rendering today’s quote
 - **Settings** (minimal) for prompt, API key, toggles
 - **Services**:
   - Quote generation service (OpenAI client)
   - Persistence (local cache + preferences)
   - Keychain wrapper (API key)
   - “Daily freshness” policy (local calendar day)
+
+### UI surface decision (MVP)
+
+- Use `NSStatusItem` + `NSPopover` with SwiftUI content via `NSHostingController`.
+- Clicking the status item toggles the popover; clicking outside dismisses it.
 
 ### Component diagram (logical)
 
@@ -71,7 +76,7 @@ Sequence (simplified):
 
 ```text
 User clicks menu bar icon
-  -> QuoteView appears
+  -> Popover opens (QuoteView)
     -> QuoteService.loadToday()
        -> if cache has entry for local YYYY-MM-DD AND cache.mode == preferences.mode: return it
        -> else: OpenAIClient.generate(prompt, mode)

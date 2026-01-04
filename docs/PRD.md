@@ -3,7 +3,7 @@
 - **Product name (working)**: Wise Companion
 - **Platform**: macOS (Apple Silicon + Intel)
 - **Type**: Personal productivity / reflection (calm morning ritual)
-- **App form factor**: **Menu bar app**
+- **App form factor**: **Menu bar app (popover anchored to the status item)**
 
 ## Problem Statement
 
@@ -39,7 +39,7 @@ It is **not** noisy, gamified, addictive, or feed-based. It is a daily intellect
 
 - User opens Mac in the morning
 - Wise Companion launches (auto-launch on login **default**) and is available via the menu bar
-- App shows immediately:
+- Clicking the menu bar icon opens a **popover** showing:
   - A generated quote
   - Supporting context / explanation
 - User reads → closes window/popover → starts day

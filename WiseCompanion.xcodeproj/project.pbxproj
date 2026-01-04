@@ -1,0 +1,229 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA1111111111111111111111 /* WiseCompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000001 /* WiseCompanionApp.swift */; };
+		AA1111111111111111111112 /* MenuBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000002 /* MenuBarController.swift */; };
+		AA1111111111111111111113 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000003 /* QuoteView.swift */; };
+		AA1111111111111111111114 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* Cocoa.framework */; };
+		AA1111111111111111111115 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* SwiftUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AA0000000000000000000000 /* WiseCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiseCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000001 /* WiseCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiseCompanionApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000002 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
+		AA0000000000000000000003 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0000000000000000000004 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AA0000000000000000000005 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA2222222222222222222222 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1111111111111111111114 /* Cocoa.framework in Frameworks */,
+				AA1111111111111111111115 /* SwiftUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA3333333333333333333333 = {
+			isa = PBXGroup;
+			children = (
+				AA4444444444444444444444 /* WiseCompanion */,
+				AA5555555555555555555555 /* Frameworks */,
+				AA6666666666666666666666 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+
+		AA4444444444444444444444 /* WiseCompanion */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000001 /* WiseCompanionApp.swift */,
+				AA0000000000000000000002 /* MenuBarController.swift */,
+				AA0000000000000000000003 /* QuoteView.swift */,
+				AA0000000000000000000006 /* Info.plist */,
+			);
+			path = WiseCompanion;
+			sourceTree = "<group>";
+		};
+
+		AA5555555555555555555555 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000004 /* Cocoa.framework */,
+				AA0000000000000000000005 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+
+		AA6666666666666666666666 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000000 /* WiseCompanion.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA7777777777777777777777 /* WiseCompanion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8888888888888888888888 /* Build configuration list for PBXNativeTarget "WiseCompanion" */;
+			buildPhases = (
+				AA9999999999999999999999 /* Sources */,
+				AA2222222222222222222222 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WiseCompanion;
+			productName = WiseCompanion;
+			productReference = AA0000000000000000000000 /* WiseCompanion.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA1010101010101010101010 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					AA7777777777777777777777 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = AA1212121212121212121212 /* Build configuration list for PBXProject "WiseCompanion" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA3333333333333333333333;
+			productRefGroup = AA6666666666666666666666 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA7777777777777777777777 /* WiseCompanion */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA9999999999999999999999 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1111111111111111111111 /* WiseCompanionApp.swift in Sources */,
+				AA1111111111111111111112 /* MenuBarController.swift in Sources */,
+				AA1111111111111111111113 /* QuoteView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA1313131313131313131313 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = WiseCompanion/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisecompanion.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AA1414141414141414141414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = WiseCompanion/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisecompanion.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+
+		AA1515151515151515151515 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+
+		AA1616161616161616161616 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA8888888888888888888888 /* Build configuration list for PBXNativeTarget "WiseCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA1313131313131313131313 /* Debug */,
+				AA1414141414141414141414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+
+		AA1212121212121212121212 /* Build configuration list for PBXProject "WiseCompanion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA1515151515151515151515 /* Debug */,
+				AA1616161616161616161616 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA1010101010101010101010 /* Project object */;
+}
+
+

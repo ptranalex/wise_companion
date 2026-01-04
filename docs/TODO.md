@@ -9,12 +9,12 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR1 — Menu bar shell + main placeholder UI
 
-- [ ] Create macOS SwiftUI app shell (menu bar-capable)
-- [ ] Add menu bar status item (icon)
-- [ ] Click status item opens main surface (popover or small window)
-- [ ] Add Quit action
-- [ ] Build `QuoteView` layout (placeholder content): quote, context, footer (date, settings affordance)
-- [ ] Manual test: clicking repeatedly does not create duplicate windows or crash
+- [x] Create macOS SwiftUI app shell (menu bar-capable)
+- [x] Add menu bar status item (icon)
+- [x] Click status item opens main surface (popover)
+- [x] Add Quit action
+- [x] Build `QuoteView` layout (placeholder content): quote, context, footer (date, settings affordance)
+- [x] Manual test: clicking repeatedly does not create duplicate windows or crash
 
 ## PR2 — Settings UI + Preferences persistence
 
