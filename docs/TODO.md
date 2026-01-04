@@ -30,16 +30,16 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR3 — Daily policy + quote cache store + tests
 
-- [ ] Implement local calendar `dateKey` (`YYYY-MM-DD`)
-- [ ] Implement quote cache store (read/write/overwrite) with metadata (`dateKey`, `mode`, timestamps)
-- [ ] Cache validation rules:
-  - [ ] Same day + same mode → show cached (no network)
-  - [ ] New day → regenerate and overwrite cache
-  - [ ] Same day but mode changed → regenerate and overwrite cache
-- [ ] Unit tests for:
-  - [ ] `dateKey` logic (same day / next day)
-  - [ ] cache read/write/overwrite
-  - [ ] cache invalidation on mode change
+- [x] Implement local calendar `dateKey` (`YYYY-MM-DD`)
+- [x] Implement quote cache store (read/write/overwrite) with metadata (`dateKey`, `mode`, timestamps)
+- [x] Cache validation rules:
+  - [x] Same day + same mode → show cached (no network)
+  - [x] New day → regenerate and overwrite cache
+  - [x] Same day but mode changed → regenerate and overwrite cache
+- [x] Unit tests for:
+  - [x] `dateKey` logic (same day / next day)
+  - [x] cache read/write/overwrite
+  - [x] cache invalidation on mode change
 
 ## PR4 — Keychain API key management + UX
 

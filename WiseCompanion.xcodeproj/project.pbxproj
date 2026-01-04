@@ -13,21 +13,49 @@
 		AA1111111111111111111116 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000007 /* Preferences.swift */; };
 		AA1111111111111111111117 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000008 /* SettingsView.swift */; };
 		AA1111111111111111111118 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000009 /* RootView.swift */; };
+		AA1111111111111111111119 /* DailyPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000010 /* DailyPolicy.swift */; };
+		AA1111111111111111111120 /* QuoteCachePayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000011 /* QuoteCachePayload.swift */; };
+		AA1111111111111111111121 /* QuoteCacheStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000012 /* QuoteCacheStore.swift */; };
+		AA1111111111111111111122 /* QuoteCacheValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000013 /* QuoteCacheValidation.swift */; };
+		AA1111111111111111111201 /* DailyPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000101 /* DailyPolicyTests.swift */; };
+		AA1111111111111111111202 /* QuoteCacheStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000102 /* QuoteCacheStoreTests.swift */; };
+		AA1111111111111111111203 /* QuoteCacheValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000103 /* QuoteCacheValidationTests.swift */; };
+		AA1111111111111111111204 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA000000000000000000000A /* XCTest.framework */; };
 		AA1111111111111111111114 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000004 /* Cocoa.framework */; };
 		AA1111111111111111111115 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000005 /* SwiftUI.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AA9999000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AA1010101010101010101010 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA7777777777777777777777;
+			remoteInfo = WiseCompanion;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		AA0000000000000000000000 /* WiseCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiseCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000200 /* WiseCompanionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WiseCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0000000000000000000001 /* WiseCompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiseCompanionApp.swift; sourceTree = "<group>"; };
 		AA0000000000000000000002 /* MenuBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarController.swift; sourceTree = "<group>"; };
 		AA0000000000000000000003 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000007 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		AA0000000000000000000008 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA0000000000000000000009 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000010 /* DailyPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicy.swift; sourceTree = "<group>"; };
+		AA0000000000000000000011 /* QuoteCachePayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCachePayload.swift; sourceTree = "<group>"; };
+		AA0000000000000000000012 /* QuoteCacheStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheStore.swift; sourceTree = "<group>"; };
+		AA0000000000000000000013 /* QuoteCacheValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheValidation.swift; sourceTree = "<group>"; };
 		AA0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0000000000000000000100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA0000000000000000000101 /* DailyPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicyTests.swift; sourceTree = "<group>"; };
+		AA0000000000000000000102 /* QuoteCacheStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheStoreTests.swift; sourceTree = "<group>"; };
+		AA0000000000000000000103 /* QuoteCacheValidationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCacheValidationTests.swift; sourceTree = "<group>"; };
 		AA0000000000000000000004 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		AA0000000000000000000005 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		AA000000000000000000000A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = System/Library/Frameworks/XCTest.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +68,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA2222222222222222222202 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1111111111111111111204 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -47,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				AA4444444444444444444444 /* WiseCompanion */,
+				AA4444444444444444444402 /* WiseCompanionTests */,
 				AA5555555555555555555555 /* Frameworks */,
 				AA6666666666666666666666 /* Products */,
 			);
@@ -62,9 +99,25 @@
 				AA0000000000000000000003 /* QuoteView.swift */,
 				AA0000000000000000000008 /* SettingsView.swift */,
 				AA0000000000000000000007 /* Preferences.swift */,
+				AA0000000000000000000010 /* DailyPolicy.swift */,
+				AA0000000000000000000011 /* QuoteCachePayload.swift */,
+				AA0000000000000000000012 /* QuoteCacheStore.swift */,
+				AA0000000000000000000013 /* QuoteCacheValidation.swift */,
 				AA0000000000000000000006 /* Info.plist */,
 			);
 			path = WiseCompanion;
+			sourceTree = "<group>";
+		};
+
+		AA4444444444444444444402 /* WiseCompanionTests */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000101 /* DailyPolicyTests.swift */,
+				AA0000000000000000000102 /* QuoteCacheStoreTests.swift */,
+				AA0000000000000000000103 /* QuoteCacheValidationTests.swift */,
+				AA0000000000000000000100 /* Info.plist */,
+			);
+			path = WiseCompanionTests;
 			sourceTree = "<group>";
 		};
 
@@ -73,6 +126,7 @@
 			children = (
 				AA0000000000000000000004 /* Cocoa.framework */,
 				AA0000000000000000000005 /* SwiftUI.framework */,
+				AA000000000000000000000A /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -82,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				AA0000000000000000000000 /* WiseCompanion.app */,
+				AA0000000000000000000200 /* WiseCompanionTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,6 +159,24 @@
 			productName = WiseCompanion;
 			productReference = AA0000000000000000000000 /* WiseCompanion.app */;
 			productType = "com.apple.product-type.application";
+		};
+
+		AA7777777777777777777702 /* WiseCompanionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8888888888888888888802 /* Build configuration list for PBXNativeTarget "WiseCompanionTests" */;
+			buildPhases = (
+				AA9999999999999999999902 /* Sources */,
+				AA2222222222222222222202 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA9090909090909090909090 /* PBXTargetDependency */,
+			);
+			name = WiseCompanionTests;
+			productName = WiseCompanionTests;
+			productReference = AA0000000000000000000200 /* WiseCompanionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -134,6 +207,7 @@
 			projectRoot = "";
 			targets = (
 				AA7777777777777777777777 /* WiseCompanion */,
+				AA7777777777777777777702 /* WiseCompanionTests */,
 			);
 		};
 /* End PBXProject section */
@@ -149,10 +223,33 @@
 				AA1111111111111111111113 /* QuoteView.swift in Sources */,
 				AA1111111111111111111117 /* SettingsView.swift in Sources */,
 				AA1111111111111111111116 /* Preferences.swift in Sources */,
+				AA1111111111111111111119 /* DailyPolicy.swift in Sources */,
+				AA1111111111111111111120 /* QuoteCachePayload.swift in Sources */,
+				AA1111111111111111111121 /* QuoteCacheStore.swift in Sources */,
+				AA1111111111111111111122 /* QuoteCacheValidation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+		AA9999999999999999999902 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA1111111111111111111201 /* DailyPolicyTests.swift in Sources */,
+				AA1111111111111111111202 /* QuoteCacheStoreTests.swift in Sources */,
+				AA1111111111111111111203 /* QuoteCacheValidationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AA9090909090909090909090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA7777777777777777777777 /* WiseCompanion */;
+			targetProxy = AA9999000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AA1313131313131313131313 /* Debug */ = {
@@ -163,6 +260,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_TESTABILITY = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = WiseCompanion/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -171,6 +269,40 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
+		};
+
+		AA1313131313131313131302 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = WiseCompanionTests/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisecompanion.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiseCompanion.app/Contents/MacOS/WiseCompanion";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+			};
+			name = Debug;
+		};
+
+		AA1414141414141414141402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				INFOPLIST_FILE = WiseCompanionTests/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wisecompanion.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WiseCompanion.app/Contents/MacOS/WiseCompanion";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+			};
+			name = Release;
 		};
 		AA1414141414141414141414 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -219,6 +351,16 @@
 			buildConfigurations = (
 				AA1313131313131313131313 /* Debug */,
 				AA1414141414141414141414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+
+		AA8888888888888888888802 /* Build configuration list for PBXNativeTarget "WiseCompanionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA1313131313131313131302 /* Debug */,
+				AA1414141414141414141402 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

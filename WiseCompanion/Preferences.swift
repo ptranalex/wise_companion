@@ -1,6 +1,6 @@
 import Foundation
 
-enum GenerationMode: String, CaseIterable, Identifiable {
+enum GenerationMode: String, CaseIterable, Codable, Identifiable {
     case economy
     case premium
 
