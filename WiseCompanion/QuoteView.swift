@@ -14,6 +14,7 @@ struct QuoteView: View {
     @State private var isLoading: Bool = false
     @State private var payload: QuoteCachePayload? = nil
     @State private var errorMessage: String? = nil
+    @State private var isMissingKeyError: Bool = false
     @State private var loadTask: Task<Void, Never>? = nil
 
     var body: some View {
@@ -62,9 +63,11 @@ struct QuoteView: View {
                             .buttonStyle(.bordered)
                             .controlSize(.small)
 
-                        Button("Open Settings", action: onOpenSettings)
-                            .buttonStyle(.bordered)
-                            .controlSize(.small)
+                        if isMissingKeyError || hasAPIKey == false {
+                            Button("Open Settings", action: onOpenSettings)
+                                .buttonStyle(.bordered)
+                                .controlSize(.small)
+                        }
                     }
                 }
                 .padding(10)
@@ -146,10 +149,19 @@ struct QuoteView: View {
     private func load() {
         loadTask?.cancel()
         errorMessage = nil
+        isMissingKeyError = false
         isLoading = true
 
         loadTask = Task {
             do {
+                // Don't start a network call if we already know we're missing a key.
+                if hasAPIKey == false {
+                    await MainActor.run {
+                        isLoading = false
+                    }
+                    return
+                }
+
                 let result = try await AppServices.quoteService.loadToday(userPrompt: userPrompt, mode: mode)
                 await MainActor.run {
                     payload = result
@@ -163,6 +175,7 @@ struct QuoteView: View {
             } catch let e as OpenAIClientError {
                 await MainActor.run {
                     payload = nil
+                    isMissingKeyError = (e == .missingAPIKey)
                     errorMessage = mapErrorMessage(e)
                     isLoading = false
                 }

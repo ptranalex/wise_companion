@@ -67,6 +67,7 @@ final class OpenAIClient {
         guard let apiKey, !apiKey.isEmpty else { throw OpenAIClientError.missingAPIKey }
 
         let config = OpenAIModelConfig.forMode(mode)
+        AppLog.network.safeInfo("OpenAI request start (model=\(config.model), max_tokens=\(config.maxOutputTokens))")
 
         let requestBody = ChatCompletionsRequest(
             model: config.model,
@@ -95,8 +96,10 @@ final class OpenAIClient {
 
             guard (200...299).contains(http.statusCode) else {
                 if let apiError = try? JSONDecoder().decode(OpenAIErrorResponse.self, from: data) {
+                    AppLog.network.safeError("OpenAI request failed (http=\(http.statusCode))")
                     throw OpenAIClientError.apiErrorMessage(apiError.error.message)
                 }
+                AppLog.network.safeError("OpenAI request failed (http=\(http.statusCode))")
                 throw OpenAIClientError.httpStatus(http.statusCode)
             }
 
@@ -108,11 +111,13 @@ final class OpenAIClient {
             }
 
             guard let content = decoded.choices.first?.message.content else {
+                AppLog.network.safeError("OpenAI response invalid (missing content)")
                 throw OpenAIClientError.invalidResponse
             }
 
             do {
                 let parsed = try QuoteJSONParser.parse(content)
+                AppLog.network.safeInfo("OpenAI request success")
                 return QuoteCachePayload(
                     dateKey: dateKey,
                     mode: mode,
@@ -121,11 +126,14 @@ final class OpenAIClient {
                     createdAt: Date()
                 )
             } catch let parseError as QuoteJSONParser.ParseError {
+                AppLog.network.safeError("OpenAI response parse failed (\(String(describing: parseError)))")
                 throw OpenAIClientError.invalidQuoteJSON(parseError)
             } catch {
+                AppLog.network.safeError("OpenAI response decode failed")
                 throw OpenAIClientError.decodingFailed
             }
         } catch let urlError as URLError where urlError.code == .timedOut {
+            AppLog.network.safeError("OpenAI request timed out")
             throw OpenAIClientError.timedOut
         }
     }

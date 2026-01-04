@@ -33,9 +33,11 @@ actor QuoteService {
         if let cached = cacheStore.load(),
            QuoteCacheValidation.isValid(payload: cached, todayDateKey: dateKey, mode: mode)
         {
+            AppLog.quote.safeInfo("Quote cache hit (dateKey=\(dateKey), mode=\(mode.rawValue))")
             return cached
         }
 
+        AppLog.quote.safeInfo("Quote cache miss (dateKey=\(dateKey), mode=\(mode.rawValue))")
         try Task.checkCancellation()
         let generated = try await generator.generateDailyQuote(dateKey: dateKey, userPrompt: userPrompt, mode: mode)
         try Task.checkCancellation()

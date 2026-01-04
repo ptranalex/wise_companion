@@ -23,6 +23,7 @@
 		AA1111111111111111111126 /* OpenAIQuotePrompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000017 /* OpenAIQuotePrompt.swift */; };
 		AA1111111111111111111127 /* QuoteJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* QuoteJSONParser.swift */; };
 		AA1111111111111111111128 /* QuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* QuoteService.swift */; };
+		AA1111111111111111111129 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* AppLog.swift */; };
 		AA1111111111111111111201 /* DailyPolicyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000101 /* DailyPolicyTests.swift */; };
 		AA1111111111111111111202 /* QuoteCacheStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000102 /* QuoteCacheStoreTests.swift */; };
 		AA1111111111111111111203 /* QuoteCacheValidationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000103 /* QuoteCacheValidationTests.swift */; };
@@ -62,6 +63,7 @@
 		AA0000000000000000000017 /* OpenAIQuotePrompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIQuotePrompt.swift; sourceTree = "<group>"; };
 		AA0000000000000000000018 /* QuoteJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteJSONParser.swift; sourceTree = "<group>"; };
 		AA0000000000000000000019 /* QuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteService.swift; sourceTree = "<group>"; };
+		AA0000000000000000000020 /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
 		AA0000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000100 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000000000000000000101 /* DailyPolicyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyPolicyTests.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				AA0000000000000000000017 /* OpenAIQuotePrompt.swift */,
 				AA0000000000000000000018 /* QuoteJSONParser.swift */,
 				AA0000000000000000000019 /* QuoteService.swift */,
+				AA0000000000000000000020 /* AppLog.swift */,
 				AA0000000000000000000006 /* Info.plist */,
 			);
 			path = WiseCompanion;
@@ -257,6 +260,7 @@
 				AA1111111111111111111126 /* OpenAIQuotePrompt.swift in Sources */,
 				AA1111111111111111111127 /* QuoteJSONParser.swift in Sources */,
 				AA1111111111111111111128 /* QuoteService.swift in Sources */,
+				AA1111111111111111111129 /* AppLog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

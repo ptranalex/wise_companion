@@ -77,7 +77,7 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 
 ## PR8 — UX polish + hardening + QA checklist
 
-- [ ] Calm loading state (skeleton/spinner) without blocking modals
-- [ ] Calm error states: Retry (user initiated), Open Settings (missing key)
-- [ ] Minimal logging policy (no key, no prompts by default)
-- [ ] Add `docs/QA_CHECKLIST.md` for manual regression checks
+- [x] Calm loading state (skeleton/spinner) without blocking modals
+- [x] Calm error states: Retry (user initiated), Open Settings (missing key)
+- [x] Minimal logging policy (no key, no prompts by default)
+- [x] Add `docs/QA_CHECKLIST.md` for manual regression checks
