@@ -81,3 +81,11 @@ This is the **single execution checklist** for building the MVP. Each top-level 
 - [x] Calm error states: Retry (user initiated), Open Settings (missing key)
 - [x] Minimal logging policy (no key, no prompts by default)
 - [x] Add `docs/QA_CHECKLIST.md` for manual regression checks
+
+## PR9 — Refactor: ViewModels + Environment DI (SOLID/DIP)
+
+- [x] Add `AppEnvironment` + SwiftUI `EnvironmentKey`
+- [x] Add `APIKeyStoring` abstraction + Keychain-backed implementation
+- [x] Add `QuoteViewModel` and migrate `QuoteView` to use it
+- [x] Add `SettingsViewModel` and migrate `SettingsView` Keychain interactions to use it
+- [x] Add unit tests: `QuoteViewModelTests`, `SettingsViewModelTests`

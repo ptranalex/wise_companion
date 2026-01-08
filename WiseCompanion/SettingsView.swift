@@ -5,11 +5,9 @@ struct SettingsView: View {
     @AppStorage(PreferencesKeys.mode) private var modeRawValue: String = GenerationMode.economy.rawValue
     @AppStorage(PreferencesKeys.autoLaunchEnabled) private var autoLaunchEnabled: Bool = true
 
+    @ObservedObject var viewModel: SettingsViewModel
     let onBack: () -> Void
 
-    @State private var apiKeyDraft: String = ""
-    @State private var apiKeyStatusText: String? = nil
-    @State private var isAPIKeyVisible: Bool = false
     @State private var autoLaunchStatusText: String? = nil
 
     private var mode: GenerationMode {
@@ -94,32 +92,32 @@ struct SettingsView: View {
 
                     HStack(spacing: 8) {
                         Group {
-                            if isAPIKeyVisible {
-                                TextField("sk-…", text: $apiKeyDraft)
+                            if viewModel.isAPIKeyVisible {
+                                TextField("sk-…", text: $viewModel.apiKeyDraft)
                                     .textFieldStyle(.roundedBorder)
                             } else {
-                                SecureField("sk-…", text: $apiKeyDraft)
+                                SecureField("sk-…", text: $viewModel.apiKeyDraft)
                                     .textFieldStyle(.roundedBorder)
                             }
                         }
 
-                        Button(action: { isAPIKeyVisible.toggle() }) {
-                            Image(systemName: isAPIKeyVisible ? "eye.slash" : "eye")
+                        Button(action: { viewModel.isAPIKeyVisible.toggle() }) {
+                            Image(systemName: viewModel.isAPIKeyVisible ? "eye.slash" : "eye")
                         }
                         .buttonStyle(.plain)
-                        .help(isAPIKeyVisible ? "Hide" : "Show")
+                        .help(viewModel.isAPIKeyVisible ? "Hide" : "Show")
                     }
 
                     HStack(spacing: 10) {
-                        Button("Save") { saveAPIKey() }
-                            .disabled(apiKeyDraft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                        Button("Save") { viewModel.saveAPIKey() }
+                            .disabled(viewModel.apiKeyDraft.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
 
-                        Button("Remove key", role: .destructive) { removeAPIKey() }
+                        Button("Remove key", role: .destructive) { viewModel.removeAPIKey() }
 
                         Spacer()
                     }
 
-                    if let apiKeyStatusText {
+                    if let apiKeyStatusText = viewModel.apiKeyStatusText {
                         Text(apiKeyStatusText)
                             .font(.caption)
                             .foregroundStyle(.secondary)
@@ -136,42 +134,7 @@ struct SettingsView: View {
             .frame(minWidth: 360, alignment: .topLeading)
         }
         .frame(minWidth: 360, minHeight: 260, alignment: .topLeading)
-        .onAppear(perform: loadExistingAPIKey)
-    }
-
-    private func loadExistingAPIKey() {
-        do {
-            let store = KeychainStore()
-            if let existing = try store.loadString(account: SecretsKeys.openAIAPIKeyAccount), !existing.isEmpty {
-                apiKeyDraft = existing
-                apiKeyStatusText = "API key loaded from Keychain."
-            } else {
-                apiKeyStatusText = "No API key saved yet."
-            }
-        } catch {
-            apiKeyStatusText = "Could not read API key from Keychain."
-        }
-    }
-
-    private func saveAPIKey() {
-        do {
-            let store = KeychainStore()
-            try store.saveString(apiKeyDraft.trimmingCharacters(in: .whitespacesAndNewlines), account: SecretsKeys.openAIAPIKeyAccount)
-            apiKeyStatusText = "API key saved to Keychain."
-        } catch {
-            apiKeyStatusText = "Could not save API key to Keychain."
-        }
-    }
-
-    private func removeAPIKey() {
-        do {
-            let store = KeychainStore()
-            try store.delete(account: SecretsKeys.openAIAPIKeyAccount)
-            apiKeyDraft = ""
-            apiKeyStatusText = "API key removed from Keychain."
-        } catch {
-            apiKeyStatusText = "Could not remove API key from Keychain."
-        }
+        .onAppear(perform: viewModel.loadExistingAPIKey)
     }
 }
 

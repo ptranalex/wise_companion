@@ -6,6 +6,12 @@ protocol QuoteGenerating {
 
 extension OpenAIClient: QuoteGenerating {}
 
+protocol QuoteServicing {
+    func loadToday(userPrompt: String, mode: GenerationMode) async throws -> QuoteCachePayload
+}
+
+extension QuoteService: QuoteServicing {}
+
 actor QuoteService {
     private let cacheStore: QuoteCacheStore
     private let generator: QuoteGenerating

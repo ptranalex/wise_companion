@@ -5,11 +5,13 @@ final class MenuBarController: NSObject {
     private let statusItem: NSStatusItem
     private let popover: NSPopover
     private let statusMenu: NSMenu
+    private let environment: AppEnvironment
 
-    override init() {
+    init(environment: AppEnvironment = .live) {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         popover = NSPopover()
         statusMenu = NSMenu()
+        self.environment = environment
 
         super.init()
 
@@ -21,7 +23,9 @@ final class MenuBarController: NSObject {
     private func configurePopover() {
         popover.behavior = .transient
         popover.contentSize = NSSize(width: 360, height: 420)
-        popover.contentViewController = NSHostingController(rootView: RootView())
+        let root = RootView(environment: environment)
+            .environment(\.appEnvironment, environment)
+        popover.contentViewController = NSHostingController(rootView: root)
     }
 
     private func configureMenu() {

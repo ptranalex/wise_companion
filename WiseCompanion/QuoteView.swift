@@ -3,6 +3,7 @@ import SwiftUI
 struct QuoteView: View {
     @AppStorage(PreferencesKeys.userPrompt) private var userPrompt: String = ""
     @AppStorage(PreferencesKeys.mode) private var modeRawValue: String = GenerationMode.economy.rawValue
+    @ObservedObject var viewModel: QuoteViewModel
 
     let onOpenSettings: () -> Void
 
@@ -10,16 +11,9 @@ struct QuoteView: View {
         GenerationMode(rawValue: modeRawValue) ?? .economy
     }
 
-    @State private var hasAPIKey: Bool? = nil
-    @State private var isLoading: Bool = false
-    @State private var payload: QuoteCachePayload? = nil
-    @State private var errorMessage: String? = nil
-    @State private var isMissingKeyError: Bool = false
-    @State private var loadTask: Task<Void, Never>? = nil
-
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            if hasAPIKey == false {
+            if viewModel.hasAPIKey == false {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("OpenAI API key required")
                         .font(.subheadline)
@@ -38,7 +32,7 @@ struct QuoteView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
 
-            if isLoading {
+            if viewModel.isLoading {
                 HStack(spacing: 10) {
                     ProgressView()
                         .controlSize(.small)
@@ -48,7 +42,7 @@ struct QuoteView: View {
                 }
             }
 
-            if let errorMessage {
+            if let errorMessage = viewModel.errorMessage {
                 VStack(alignment: .leading, spacing: 6) {
                     Text("Couldn’t load today’s quote")
                         .font(.subheadline)
@@ -59,11 +53,11 @@ struct QuoteView: View {
                         .foregroundStyle(.secondary)
 
                     HStack(spacing: 10) {
-                        Button("Retry") { load() }
+                        Button("Retry") { viewModel.startLoad(userPrompt: userPrompt, mode: mode) }
                             .buttonStyle(.bordered)
                             .controlSize(.small)
 
-                        if isMissingKeyError || hasAPIKey == false {
+                        if viewModel.isMissingKeyError || viewModel.hasAPIKey == false {
                             Button("Open Settings", action: onOpenSettings)
                                 .buttonStyle(.bordered)
                                 .controlSize(.small)
@@ -75,7 +69,7 @@ struct QuoteView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
             }
 
-            if let payload {
+            if let payload = viewModel.payload {
                 Text("“\(payload.quote)”")
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -85,7 +79,7 @@ struct QuoteView: View {
                     .font(.body)
                     .foregroundStyle(.secondary)
                     .fixedSize(horizontal: false, vertical: true)
-            } else if !isLoading, errorMessage == nil {
+            } else if !viewModel.isLoading, viewModel.errorMessage == nil {
                 Text("“…”")
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -123,86 +117,13 @@ struct QuoteView: View {
         .padding(16)
         .frame(minWidth: 360, minHeight: 260, alignment: .topLeading)
         .onAppear {
-            refreshHasAPIKey()
-            load()
+            viewModel.onAppear(userPrompt: userPrompt, mode: mode)
         }
         .onChange(of: modeRawValue) { _ in
-            load()
+            viewModel.startLoad(userPrompt: userPrompt, mode: mode)
         }
         .onDisappear {
-            loadTask?.cancel()
-            loadTask = nil
-        }
-    }
-
-    private func refreshHasAPIKey() {
-        do {
-            let store = KeychainStore()
-            let key = try store.loadString(account: SecretsKeys.openAIAPIKeyAccount)
-            hasAPIKey = (key?.isEmpty == false)
-        } catch {
-            // If Keychain is unavailable, treat as missing to guide user to Settings.
-            hasAPIKey = false
-        }
-    }
-
-    private func load() {
-        loadTask?.cancel()
-        errorMessage = nil
-        isMissingKeyError = false
-        isLoading = true
-
-        loadTask = Task {
-            do {
-                // Don't start a network call if we already know we're missing a key.
-                if hasAPIKey == false {
-                    await MainActor.run {
-                        isLoading = false
-                    }
-                    return
-                }
-
-                let result = try await AppServices.quoteService.loadToday(userPrompt: userPrompt, mode: mode)
-                await MainActor.run {
-                    payload = result
-                    isLoading = false
-                }
-            } catch is CancellationError {
-                // Silent: user closed the popover or changed mode.
-                await MainActor.run {
-                    isLoading = false
-                }
-            } catch let e as OpenAIClientError {
-                await MainActor.run {
-                    payload = nil
-                    isMissingKeyError = (e == .missingAPIKey)
-                    errorMessage = mapErrorMessage(e)
-                    isLoading = false
-                }
-            } catch {
-                await MainActor.run {
-                    payload = nil
-                    errorMessage = "Unexpected error. Please try again."
-                    isLoading = false
-                }
-            }
-        }
-    }
-
-    private func mapErrorMessage(_ e: OpenAIClientError) -> String {
-        switch e {
-        case .missingAPIKey:
-            return "Add an API key in Settings to enable generation."
-        case .timedOut:
-            return "The request timed out. Check your connection and try again."
-        case .apiErrorMessage(let message):
-            return message
-        case .httpStatus(let code):
-            return "Network error (HTTP \(code)). Try again."
-        case .invalidQuoteJSON:
-            return "The response couldn’t be parsed. Please retry."
-        case .invalidResponse, .decodingFailed:
-            return "The response was invalid. Please retry."
+            viewModel.onDisappear()
         }
     }
 }
